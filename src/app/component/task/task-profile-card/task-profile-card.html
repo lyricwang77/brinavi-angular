@@ -1,0 +1,23 @@
+<p-card styleClass="shadow-2 mb-3 border-round">
+  <ng-template pTemplate="header">
+    <div class="flex justify-content-between align-items-center">
+      <span class="font-bold text-lg">{{ taskProfile.title }}</span>
+      <p-tag 
+        [severity]="taskProfile.inEffect ? 'success' : 'danger'" 
+        [value]="taskProfile.inEffect ? 'Active' : 'Inactive'">
+      </p-tag>
+    </div>
+  </ng-template>
+
+  <div class="p-text-secondary text-sm line-height-3">
+    <div><b>Type:</b> {{ taskProfile.type }}</div>
+    <div><b>Workspace:</b> {{ taskProfile.workspaceId }}</div>
+    <div><b>Channel:</b> {{ taskProfile.channel }}</div>
+    <div><b>Content:</b> {{ taskProfile.content }}</div>
+    <div><b>Creator:</b> {{ taskProfile.creatorId }}</div>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <small class="text-500">ID: {{ taskProfile.id }}</small>
+  </ng-template>
+</p-card>
